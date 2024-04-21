@@ -1,0 +1,41 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/GetStudentInfo",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5038
+                }
+            ],
+            "UpstreamPathTemplate": "/info",
+            "UpstreamHttpMethod": ["Get"],
+            "SwaggerKey": "student"
+        },
+        {
+            "DownstreamPathTemplate": "/GetTeacherInfo",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5104
+                }
+            ],
+            "UpstreamPathTemplate": "/GetTeacherInfo",
+            "UpstreamHttpMethod": ["Get"]
+        }
+    ],
+    "SwaggerEndPoints": [
+        {
+            "Key": "student",
+            "Config": [
+                {
+                    "Name": "studentAPI",
+                    "Version": "v1",
+                    "Url": "http://localhost:5110/swagger/v1/swagger.json"
+                }
+            ]
+        }
+    ]
+}
